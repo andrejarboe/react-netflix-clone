@@ -1,6 +1,9 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Row from '../components/Row'
 import styles from '../styles/Home.module.css'
+
+import request from './request';
 
 export default function Home() {
   return (
@@ -11,6 +14,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <h1>netflix clone</h1>
+
+      <Row title="NETFLIX ORIGINALS" fetchUrl={request.fetchNetflixOriginals} />
+      <Row title="Trending Now" fetchUrl={request.fetchTrending} />
+
     </div>
   )
 }
