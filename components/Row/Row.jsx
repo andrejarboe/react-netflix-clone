@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import axios from '../pages/axios';
+import axios from '../../pages/axios';
 
 const poster_url = "https://image.tmdb.org/t/p/original/"
 
-function Row({ title, fetchUrl }) {
+function Row({ title, fetchUrl, isLargeRow }) {
     const [movies, setMovies] = useState([]);
 
     // run this code when the ROW loads
@@ -32,8 +32,10 @@ function Row({ title, fetchUrl }) {
                 {/* sevral row_poster(s) */}
                 {movies.map(movie => (
                     <img
-                        className="row_poster"
-                        src={`${poster_url}${movie.poster_path}`} alt={movie.name}
+                        key={movie.id}
+                        className={`row__poster ${isLargeRow && "row__poster-large"}`}
+                        src={`${poster_url}${isLargeRow ? movie.poster_path : movie.backdrop_path}`} 
+                        alt={movie.name}
                     />
                 ))}
             </div>

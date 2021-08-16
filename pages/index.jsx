@@ -1,7 +1,5 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import Row from '../components/Row'
-import styles from '../styles/Home.module.css'
+import Row from '../components/Row/Row'
 
 import request from './request';
 
@@ -15,9 +13,39 @@ export default function Home() {
       </Head>
       <h1>netflix clone</h1>
 
-      <Row title="NETFLIX ORIGINALS" fetchUrl={request.fetchNetflixOriginals} />
-      <Row title="Trending Now" fetchUrl={request.fetchTrending} />
-
+      <Row
+        title="NETFLIX ORIGINALS"
+        fetchUrl={request.fetchNetflixOriginals}
+        isLargeRow
+      />
+      <Row
+        title="Trending Now"
+        fetchUrl={request.fetchTrending}
+      />
+      <Row
+        title="Top Rated Now"
+        fetchUrl={request.fetchTopRated}
+      />
+      <Row
+        title="Action Movies"
+        fetchUrl={request.fetchActionMovies}
+      />
+      <Row
+        title="Comedy Movies"
+        fetchUrl={request.fetchComedyMovies}
+      />
+      <Row
+        title="Horror Movies"
+        fetchUrl={request.fetchHorrorMovies}
+      />
+      <Row
+        title="Romance Movies"
+        fetchUrl={request.fetchRomanceMovies}
+      />
+      <Row
+        title="Documentaries Movies"
+        fetchUrl={request.fetchDocumentaries}
+      />
     </div>
   )
 }
