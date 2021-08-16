@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import axios from '../../pages/axios';
+import axios from '../Hooks/axios';
 
 const poster_url = "https://image.tmdb.org/t/p/original/"
 
