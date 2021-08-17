@@ -3,6 +3,7 @@ import Row from '../components/Row/Row'
 
 import request from '../components/Hooks/request';
 import Banner from '../components/Banner/Banner';
+import Nav from '../components/Nav/Nav';
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* Nav*/}
+      <Nav />
       {/* Banner */}
       <Banner />
       <Row
